@@ -25,6 +25,7 @@ public class TopicService {
     }
 
     public List<Topic> fetchAllTopics() {
+        System.out.println(topicRepository.findTopicsByUserId(52L).toString());
         return topicRepository.findAll();
     }
 }

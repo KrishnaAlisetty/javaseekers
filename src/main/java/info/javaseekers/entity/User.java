@@ -15,9 +15,6 @@ public class User {
     String userName;
     String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "topic_fk_user"))
-    List<Topic> favouriteTopics;
 
     public Long getId() {
         return id;
@@ -43,11 +40,4 @@ public class User {
         this.password = password;
     }
 
-    public List<Topic> getTopics() {
-        return favouriteTopics;
     }
-
-    public void setTopics(List<Topic> favouriteTopics) {
-        this.favouriteTopics = favouriteTopics;
-    }
-}
